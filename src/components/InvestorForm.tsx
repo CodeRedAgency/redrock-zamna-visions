@@ -28,10 +28,10 @@ const InvestorForm = () => {
   };
 
   return (
-    <Card className="elegant-shadow">
+    <Card className="elegant-shadow glass-card border-white/10">
       <CardHeader>
-        <CardTitle className="text-2xl">Request Investor Information</CardTitle>
-        <CardDescription>
+        <CardTitle className="text-2xl text-sand">Request Investor Information</CardTitle>
+        <CardDescription className="text-sand/70">
           Complete the form below and our team will reach out with detailed investment opportunities.
         </CardDescription>
       </CardHeader>
@@ -92,7 +92,7 @@ const InvestorForm = () => {
             />
           </div>
 
-          <Button type="submit" className="w-full" size="lg">
+          <Button type="submit" className="w-full gradient-turquoise glow-turquoise hover:scale-105 transition-transform duration-300" size="lg">
             Submit Inquiry
           </Button>
         </form>

@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, MapPin, Linkedin } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -30,15 +30,17 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-charcoal">
       <Navigation />
       
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl text-muted-foreground">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-sand">
+              Contact <span className="text-primary">Us</span>
+            </h1>
+            <p className="text-xl text-sand/80">
               Let's discuss how we can work together
             </p>
           </div>
@@ -46,78 +48,63 @@ const Contact = () => {
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div className="space-y-8 animate-fade-in">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
-                <p className="text-muted-foreground mb-8">
+              <div className="glass-card p-8 rounded-xl">
+                <h2 className="text-3xl font-bold mb-6 text-sand">Get In Touch</h2>
+                <p className="text-sand/80 mb-8">
                   Whether you're an investor interested in our projects, a partner exploring collaboration 
                   opportunities, or simply want to learn more about RedRockPMI, we'd love to hear from you.
                 </p>
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-primary" />
+                <div className="flex items-start space-x-4 glass-card p-6 rounded-xl hover-lift">
+                  <div className="w-12 h-12 gradient-turquoise rounded-lg flex items-center justify-center flex-shrink-0 glow-turquoise">
+                    <Mail className="h-6 w-6 text-charcoal" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Email</h3>
-                    <a href="mailto:info@redrockpmi.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    <h3 className="font-bold mb-1 text-sand">Email</h3>
+                    <a href="mailto:info@redrockpmi.com" className="text-sand/80 hover:text-primary transition-colors">
                       info@redrockpmi.com
                     </a>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-sm text-sand/70 mt-1">
                       For general inquiries and investor relations
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-primary" />
+                <div className="flex items-start space-x-4 glass-card p-6 rounded-xl hover-lift">
+                  <div className="w-12 h-12 gradient-turquoise rounded-lg flex items-center justify-center flex-shrink-0 glow-turquoise">
+                    <MapPin className="h-6 w-6 text-charcoal" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Phone</h3>
-                    <a href="tel:+15551234567" className="text-muted-foreground hover:text-primary transition-colors">
-                      +1 (555) 123-4567
-                    </a>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Monday - Friday, 9:00 AM - 6:00 PM MST
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold mb-1">Office</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="font-bold mb-1 text-sand">Office</h3>
+                    <p className="text-sand/80">
                       123 Main Street, Suite 500<br />
                       Phoenix, AZ 85001
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Linkedin className="h-6 w-6 text-primary" />
+                <div className="flex items-start space-x-4 glass-card p-6 rounded-xl hover-lift">
+                  <div className="w-12 h-12 gradient-terracotta rounded-lg flex items-center justify-center flex-shrink-0 glow-terracotta">
+                    <Linkedin className="h-6 w-6 text-charcoal" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">LinkedIn</h3>
-                    <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <h3 className="font-bold mb-1 text-sand">LinkedIn</h3>
+                    <a href="#" className="text-sand/80 hover:text-primary transition-colors">
                       Connect with us on LinkedIn
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-muted/30 rounded-lg p-6 mt-8">
-                <h3 className="font-bold mb-3">Investor Inquiries</h3>
-                <p className="text-sm text-muted-foreground mb-4">
+              <div className="glass-card rounded-lg p-6 mt-8">
+                <h3 className="font-bold mb-3 text-sand">Investor Inquiries</h3>
+                <p className="text-sm text-sand/80 mb-4">
                   For detailed investment information and private consultations, please visit our 
                   dedicated investor page.
                 </p>
-                <Button asChild variant="outline" className="w-full">
+                <Button asChild variant="outline" className="w-full glass border-primary/50 hover:bg-primary/10 text-sand">
                   <a href="/invest">Investor Information</a>
                 </Button>
               </div>
@@ -125,8 +112,8 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="animate-fade-in">
-              <div className="bg-card rounded-lg p-8 elegant-shadow">
-                <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+              <div className="glass-card rounded-lg p-8 elegant-shadow">
+                <h2 className="text-2xl font-bold mb-6 text-sand">Send Us a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Full Name *</Label>
@@ -185,7 +172,7 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full" size="lg">
+                  <Button type="submit" className="w-full gradient-turquoise glow-turquoise hover:scale-105 transition-transform duration-300" size="lg">
                     Send Message
                   </Button>
                 </form>

@@ -52,10 +52,10 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         charcoal: "hsl(var(--charcoal))",
-        jungle: "hsl(var(--jungle))",
+        terracotta: "hsl(var(--terracotta))",
+        turquoise: "hsl(var(--turquoise))",
         sand: "hsl(var(--sand))",
-        bronze: "hsl(var(--bronze))",
-        wood: "hsl(var(--wood))",
+        "deep-charcoal": "hsl(var(--deep-charcoal))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -87,6 +87,14 @@ export default {
           "0%": { transform: "translateX(100%)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "0.5", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.05)" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-1000px 0" },
+          "100%": { backgroundPosition: "1000px 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.3s ease-out",
@@ -95,6 +103,8 @@ export default {
         "fade-in-up": "fade-in-up 0.8s ease-out",
         "scale-in": "scale-in 0.4s ease-out",
         "slide-in-right": "slide-in-right 0.5s ease-out",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "shimmer": "shimmer 3s linear infinite",
       },
     },
   },

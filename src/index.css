@@ -8,72 +8,73 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 32 20% 97%;
-    --foreground: 160 35% 15%;
+    /* Dark-mode-first theme with Red Rock inspired colors */
+    --background: 0 0% 7%;
+    --foreground: 45 56% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 160 35% 15%;
+    --card: 0 0% 10%;
+    --card-foreground: 45 56% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 160 35% 15%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 45 56% 92%;
 
-    --primary: 160 45% 25%;
-    --primary-foreground: 32 35% 95%;
+    --primary: 171 100% 48%;
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 30 15% 80%;
-    --secondary-foreground: 160 35% 15%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 45 56% 92%;
 
-    --muted: 32 20% 92%;
-    --muted-foreground: 160 15% 45%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 45 30% 70%;
 
-    --accent: 38 65% 55%;
-    --accent-foreground: 160 35% 15%;
+    --accent: 12 67% 63%;
+    --accent-foreground: 45 56% 92%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 32 35% 95%;
+    --destructive-foreground: 45 56% 92%;
 
-    --border: 30 15% 85%;
-    --input: 30 15% 85%;
-    --ring: 160 45% 25%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 171 100% 48%;
 
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --charcoal: 160 10% 20%;
-    --jungle: 160 45% 25%;
-    --sand: 32 35% 88%;
-    --bronze: 38 65% 55%;
-    --wood: 30 25% 65%;
+    /* Custom design tokens - Red Rock & Web3 theme */
+    --charcoal: 0 0% 7%;
+    --terracotta: 12 67% 63%;
+    --turquoise: 171 100% 48%;
+    --sand: 45 56% 92%;
+    --deep-charcoal: 0 0% 10%;
   }
 
   .dark {
-    --background: 160 20% 8%;
-    --foreground: 32 35% 95%;
+    --background: 0 0% 7%;
+    --foreground: 45 56% 92%;
 
-    --card: 160 15% 12%;
-    --card-foreground: 32 35% 95%;
+    --card: 0 0% 10%;
+    --card-foreground: 45 56% 92%;
 
-    --popover: 160 15% 12%;
-    --popover-foreground: 32 35% 95%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 45 56% 92%;
 
-    --primary: 32 35% 95%;
-    --primary-foreground: 160 45% 25%;
+    --primary: 171 100% 48%;
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 160 10% 20%;
-    --secondary-foreground: 32 35% 95%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 45 56% 92%;
 
-    --muted: 160 10% 20%;
-    --muted-foreground: 32 15% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 45 30% 70%;
 
-    --accent: 38 65% 55%;
-    --accent-foreground: 160 35% 15%;
+    --accent: 12 67% 63%;
+    --accent-foreground: 45 56% 92%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 32 35% 95%;
+    --destructive-foreground: 45 56% 92%;
 
-    --border: 160 10% 20%;
-    --input: 160 10% 20%;
-    --ring: 32 35% 95%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 171 100% 48%;
   }
 }
 
@@ -93,14 +94,84 @@ All colors MUST be HSL.
 
 @layer utilities {
   .text-gradient {
+    @apply bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .text-gradient-turquoise {
     @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
   }
 
   .elegant-shadow {
-    box-shadow: 0 10px 40px -10px hsl(var(--primary) / 0.2);
+    box-shadow: 0 10px 40px -10px hsl(var(--primary) / 0.3);
   }
 
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  /* Glassmorphism Effects */
+  .glass {
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card {
+    background: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Gradient Backgrounds */
+  .gradient-turquoise {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 100%);
+  }
+
+  .gradient-terracotta {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent) / 0.8) 100%);
+  }
+
+  .gradient-radial {
+    background: radial-gradient(circle at 50% 50%, hsl(var(--primary) / 0.15), hsl(var(--accent) / 0.15), transparent);
+  }
+
+  /* Aurora Glow Effect */
+  .aurora-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 80% 50% at 50% 50%,
+      hsl(var(--turquoise) / 0.15),
+      hsl(var(--terracotta) / 0.1),
+      transparent 70%
+    );
+    animation: aurora-shift 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes aurora-shift {
+    0%, 100% {
+      transform: scale(1) translate(0, 0);
+      opacity: 0.6;
+    }
+    33% {
+      transform: scale(1.1) translate(5%, -3%);
+      opacity: 0.8;
+    }
+    66% {
+      transform: scale(1.05) translate(-3%, 5%);
+      opacity: 0.7;
+    }
+  }
+
+  /* Glow Effects */
+  .glow-turquoise {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 40px hsl(var(--primary) / 0.2);
+  }
+
+  .glow-terracotta {
+    box-shadow: 0 0 20px hsl(var(--accent) / 0.3), 0 0 40px hsl(var(--accent) / 0.2);
   }
 }
